@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,272 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
-    
 </head>
+
 <body>
-    <div id="main">
-        <div>
-            <h1>Introduction to the git command line</h1>
-        </div>
-    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <nav id="navbar">
+        <header>Git command line</header>
+        <ul>
+            <a class="nav-link" href="#Introduction_to_the_git_command_line">
+                <li>Introduction to the Git command line</li>
+            </a>
+            <a class="nav-link" href="#Before_you_begin">
+                <li>Before you begin</li>
+            </a>
+            <a class="nav-link" href="#Everyday_commands">
+                    <li>Everyday commands</li>
+                </a>
+            <a class="nav-link" href="#Working_with_a_remote_service">
+                <li>Working with a remote service</li>
+            </a>
+            <a class="nav-link" href="#Verifying_changes_before_any_commit">
+                <li>Verifying changes before any commit</li>
+            </a>
+            <a class="nav-link" href="#Discarding_uncommitted_changes">
+                <li>Discarding uncommitted changes</li>
+            </a>
+           <!--  <a class="nav-link" href="#reverdCommit">
+                <li>Revert committed changes</li>
+            </a>
+            <a class="nav-link" href="#pushChange">
+                <li>Revert committed and pushed changes</li>
+            </a>
+            <a class="nav-link" href="#extras">
+                <li>Configuring your Git environment</li>
+            </a> -->
+        </ul>
+    </nav>
+    <main id="main-doc">
+        
+        <section class="main-section" id="Introduction_to_the_git_command_line">
+                <header>Introduction to the git command line</header> 
+            <hr>
+            <article>
+                <p>
+                    <strong> PREREQUISITE:</strong> Basic understanding of the command line.
+                    <br>
+                    Git is a tool that makes sharing code and collaborating with other developers really easy. It also
+                    keeps our code tracked and safe. The following examples will help you understand how to use this
+                    tool on a daily basis.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Before_you_begin">
+            <header>Before you begin</header>
+            <hr>
+            <section>
+                <p>
+                    Install command line Git for your operating system (OS X, Windows or Linux) and open your terminal
+                    / command prompt.
+                    <br>
+                    Create a directory where you will be storing all your projects. You can call it code or projects.
+
+                    <h3> Setup your Git details</h3>
+                    <code>
+                    $ git config --global user.name "Your Name"
+                    <br>
+                    $ git config --global user.email "name@domain"
+                    </code>
+                    <h3> Setup an SSH key</h3>
+                    <p>
+                    An SSH key is used to identify trusted computers, without entering a password. Instructions on how
+                    to generate an SSH key.</p>
+                </p>
+            </section>
+        </section>
+        <section class="main-section" id="Everyday_commands">
+            <header>Everyday commands</header>
+            <hr>
+            <section>
+                <p>
+
+                    <h3>Create and add your project in Git</h3>
+                    <code>
+                    $ mkdir practising-git <br>
+                    $ cd practising-git <br>
+                    $ git init
+                    </code>
+                    <h3>Create a file </h3>
+                    $ echo "&lt;header&gt;Learning git&lt;/header&gt;" > index.html <br>
+                    The above command will output &lt;header&gt;Learning git&lt;/header&gt; and store it in index.html. Open up
+                    the file and have a look.
+                    <h3> Check the Git repository status.</h3>
+                    $ git status 
+                    <p> 
+                    The above command will tell you which files in the current directory have been changed, which files
+                    have not yet been added to the Git repository and so on.</p>
+                    <h3> Add your file on the repository and commit your changes.</h3>
+                    $ git status <br>
+                    $ git add . 
+                    <p>
+                    . will add all the files in the current directory and subdirectories. You should only use it when
+                    initialising your repository. Rest of the time you can specify the file names to be added.</p>
+                    $ git commit -m 'this is my first command-line commit!' <br>
+                    <h3>Check the Git commit history.</h3>
+                    $ git log
+                    <h3>Transferring project repository to an online service</h3>
+                   <li> First you need to create an account to the service of your choice (GitHub, GitLab). Then, create a
+                    new project (or repository). <br>
+
+                    Copy the information about adding an existing project to the repository which should be something
+                    like the details below. </li><br>
+                    $ git remote add origin &lt;repository-url&gt; <br>
+                    $ git push -u origin master
+                    <h3> List all your remote repositories</h3>
+                    $ git remote <br>
+                    Or to see more information you can use the verbose (-v) flag <br>
+                    $ git remote -v
+                    <h3> Syncing your local copy with the remote copy</h3>
+                    $ git pull origin master <br>
+                    <li>
+                    Username for 'https://github.com': "your username" <br>
+                    Password for 'https://<username>@github.com': "your password" <br>
+                        When you are working with a remote repo it is important to sync your local repo before doing
+                        any commit, merge or push.</li>
+
+                        <h3> Syncing the remote copy with your local copy</h3>
+                        $ git push origin master <br>
+                        $ git log <br>
+                </p>
+            </section>
+        </section>
+        <section class="main-section" id="Working_with_a_remote_service">
+            <header>Working with a remote service</header>
+            <hr>
+            <section>
+                <p>
+                    Update the index.html file and then commit and push the changes
+                    <br>
+                    <code>
+                    &lt;html &gt; <br>
+
+                    &lt;head&gt; <br>
+                    &lt;title&gt;Learning Git!&lt;/title&gt; <br>
+                    &lt;/head&gt; <br>
+
+                    &lt;body&gt; <br>
+                    &lt;header&gt; Learning Git &lt;/header&gt; <br>
+                    &lt;dl&gt; <br>
+                    &lt;dt&gt;Initialise a Git repository&lt;/dt&gt; <br>
+                    &lt;dd&gt;git init&lt;/dd&gt; <br>
+                    &lt;dt&gt;Add files to Git&lt;/dt&gt; <br>
+                    &lt;dd&gt;git add filename&lt;/dd&gt; <br>
+                    &lt;/dl&gt; <br>
+                    &lt;/body&gt; <br>
+
+                    &lt;/html&gt; <br></code>
+                    index.html
+                    <h3> Check the status of your repository</h3>
+                    $ git status <br>
+                    <h3>Commit and push the changes </h3>
+                    $ git add index.html <br>
+                    $ git commit -m 'updated to include the commands I learned today' <br>
+                    $ git push origin master <br>
+                    <h3> Check the repository Git history</h3>
+                    $ git log <br>
+                    <h3>Check your code online (from the GitHub or GitLab website).</h3>
+                </p>
+            </section>
+        </section>
+        <section class="main-section" id="Verifying_changes_before_any_commit">  
+            <header>Verifying changes before any commit</header>
+            <hr>
+            <section>
+                <p>
+                    Update index.html<br>
+                    <code>
+                    &lt;html&gt;<br>
+
+                    &lt;head&gt;<br>
+                    &lt;title&gt;Learning Git!&lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+
+                    &lt;body&gt;<br>
+                    &lt;header&gt; Learning Git &lt;/header&gt;<br>
+                    &lt;dl&gt;<br>
+                    &lt;dt&gt;Initialise a Git repository&lt;/dt&gt;<br>
+                    &lt;dd&gt;git init&lt;/dd&gt;<br>
+                    &lt;dt&gt;Add files to Git&lt;/dt&gt;<br>
+                    &lt;dd&gt;git add &lt;filename&gt;<br>
+                    &lt;/dd&gt;<br>
+                    &lt;dt&gt;Checking file changes&lt;/dt&gt;<br>
+                    &lt;dd&gt;git status&lt;/dd&gt;<br>
+                    &lt;/dl&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;<br> </code>
+                    <h3>Check the changes</h3>
+                    $ git status <br>
+                    $ git diff <br>
+                    <li>
+                    The -/+ indications you can see mean <br>
+
+                    - indicates lines removed from the code. <br>
+
+                    + indicates lines added to the code. <br>
+                    </li>
+                    $ git diff <br>
+                    <li>
+                    diff --git a/index.html b/index.html<br>
+                    index 21f15d1..c2031f1 100644<br>
+                    --- a/index.html<br>
+                    +++ b/index.html<br>
+                    @@ -10,6 +10,8 @@<br>
+                    </li>
+                    <code> 
+                    &lt;dd&gt;git init&lt;/dd&gt; <br>
+                    &lt;dt&gt;Add files to git&lt;/dt&gt; <br>
+                    &lt;dd&gt;git add &lt;filename&gt; <br>
+                    &lt;/dd&gt; <br>
+                    + &lt;dt&gt;Checking file changes&lt;/dt&gt; <br>
+                    + &lt;dd&gt;git status&lt;/dd&gt;<br>
+                    &lt;/dl&gt; </code><br>
+                    <h3> After you verify your change, commit and push them</h3>
+                    $ git add . <br>
+                    $ git commit -m 'Added git status description' <br>
+                    $ git push origin master <br>
+
+                </p>
+            </section>
+        </section>
+        <section class="main-section" id="Discarding_uncommitted_changes">
+            <header>Discarding uncommitted changes</header>
+            <hr>
+        <section>
+            <p>
+
+                Edit the index.html file and then check the changes. <br>
+
+                $ echo 'oh no!' > index.html <br>
+                Have a look at changes to the file using git diff <br>
+
+                <h3> Check the status of the repository</h3>
+                $ git status <br>
+                <p>
+                    <li> On branch master <br>
+                        Changes not staged for commit: <br>
+                        (use "git add <file>..." to update what will be committed) <br>
+                            (use "git checkout -- <file>..." to discard changes in working directory) </li><br>
+
+                    modified: index.html <br>
+
+                    no changes added to commit (use "git add" and/or "git commit -a")
+                </p><br>
+                <h3>To discard the changes checkout the file </h3>
+                $ git checkout index.html <br>
+                Don’t forget to verify the changes <br>
+
+                $ git diff <br>
+                $ view index.html <br>
+                <p>
+                    After reverting the changes you have to push the code to the remote repo to apply them </p>
+                $ git push origin master
+
+            </p>
+        </section>
+        </section>
+
+    </main>
 </body>
+
 </html>
